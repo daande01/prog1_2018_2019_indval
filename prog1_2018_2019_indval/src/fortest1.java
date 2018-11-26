@@ -1,10 +1,11 @@
-package prog1_2018_2019_indval;
 
-public class fortest {
+
+
+public class fortest1 {
 
 	public static void main(String[] args) {
 
-
+				//loopar ut gånger tabell
 
 				for (int i = 1; i < 10; i++) {
 
