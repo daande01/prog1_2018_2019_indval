@@ -52,8 +52,9 @@ public class Alarm {
 	    };
 	    Timer timer = new Timer("Timer");
 
-	    int delay = 1000;
-	    timer.schedule(task, delay,1000);
+	    long delay  = 1000L;
+	    long period = 1000L;
+	    timer.schedule(task, delay,period);
 
 
 
