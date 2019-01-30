@@ -19,7 +19,7 @@ public class Metoder2 {
 			int tal = k * i;
 			System.out.println(k+"*" + i + "=" + tal);
 		}
-			k=10000;
+
 	}
 
 	public static void main(String[] args) {
@@ -28,6 +28,7 @@ public class Metoder2 {
 		int tab= Integer.parseInt(tabell);
 
 		Metoder2.gånger(tab);
+
 
 	}
 

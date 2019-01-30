@@ -8,13 +8,15 @@ public class Metod1 {
 
 	}
 
-	public static void summa(int f, int n) {
+	public static int summa(int f, int n) {
 
 		f=40;
 
 		int sum=f+n;
 
 		System.out.println(sum);
+
+		return sum;
 
 	}
 
@@ -28,11 +30,13 @@ public class Metod1 {
 
 	public static void main(String[] args) {
 
-			int a=12;
-			int b=12;
+			int n=12;
+			int f=12;
 
 
-			Metod1.summa(a,b);
+
+
+			System.out.println(Metod1.summa(n,f));
 
 				double svar=Metod1.sub(12,6);
 
