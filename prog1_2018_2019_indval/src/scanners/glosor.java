@@ -7,6 +7,7 @@ public class glosor {
 
 	static LinkedList<String> sv = new LinkedList<String>();
 	static LinkedList<String> eng = new LinkedList<String>();
+	static int  poäng=0;
 
 	public static void main(String[] args) {
 
@@ -30,7 +31,7 @@ public class glosor {
 
 				break;
 			case 2:
-				// test();
+				test();
 				break;
 			case 3:
 
@@ -73,14 +74,19 @@ public class glosor {
 
 	public static void test() {
 
-		// looop räknare I=0
+		int i = 0;
 
-		// visa ord på sv sv.get(i);
-		// läsa in eng ordet från användaren
-		// jämföra inmatatord med eng ord från lista
-		// ge poäng
 
-		// loop
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("ange följande ord på engelska"+ sv.get(i));
+
+		String engord= sc.nextLine();
+
+		if (engord.equals(eng.get(i))) {
+			poäng++;
+
+		}
 
 	}
 
