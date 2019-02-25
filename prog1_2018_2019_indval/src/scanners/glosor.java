@@ -7,7 +7,7 @@ public class glosor {
 
 	static LinkedList<String> sv = new LinkedList<String>();
 	static LinkedList<String> eng = new LinkedList<String>();
-	static int  poäng=0;
+	static int poäng = 0;
 
 	public static void main(String[] args) {
 
@@ -66,7 +66,7 @@ public class glosor {
 
 		for (int i = 0; i < sv.size(); i++) {
 
-			System.out.println(sv.get(i) + " == " + eng.get(i)+"\n");
+			System.out.println(sv.get(i) + " == " + eng.get(i) + "\n");
 
 		}
 
@@ -76,12 +76,11 @@ public class glosor {
 
 		int i = 0;
 
-
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("ange följande ord på engelska"+ sv.get(i));
+		System.out.println("ange följande ord på engelska" + sv.get(i));
 
-		String engord= sc.nextLine();
+		String engord = sc.nextLine();
 
 		if (engord.equals(eng.get(i))) {
 			poäng++;
