@@ -78,15 +78,19 @@ public class glosor {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("ange följande ord på engelska" + sv.get(i));
+		while (i < sv.size()) {
 
-		String engord = sc.nextLine();
+			System.out.println("ange följande ord på engelska" + sv.get(i));
+			String engord = sc.nextLine();
+			if (engord.equals(eng.get(i))) {
+				 poäng++;
 
-		if (engord.equals(eng.get(i))) {
-			poäng++;
+			}
 
+			i++;
 		}
 
+		System.out.println(poäng+"/"+sv.size());
 	}
 
 }
