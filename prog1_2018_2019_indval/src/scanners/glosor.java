@@ -73,7 +73,7 @@ public class glosor {
 	}
 
 	public static void test() {
-
+		poäng=0;
 		int i = 0;
 
 		Scanner sc = new Scanner(System.in);
@@ -91,6 +91,7 @@ public class glosor {
 		}
 
 		System.out.println(poäng+"/"+sv.size());
+
 	}
 
 }
