@@ -15,7 +15,6 @@ public class readfile {
 
 
 
-		while(sc.hasNextLine()) {
 
 
 			System.out.println(sc.nextLine());

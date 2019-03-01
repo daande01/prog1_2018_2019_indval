@@ -11,6 +11,11 @@ public class glosor {
 
 	public static void main(String[] args) {
 
+		//skapa en scanner som läser från filen
+		// skapa en loop som hämtar ord för ord och lägger i listan
+
+
+
 		sv.add("katt");
 		eng.add("cat");
 		sv.add("bil");
@@ -40,6 +45,10 @@ public class glosor {
 			case 4:
 
 				fortgå = false;
+
+				lagraIFil();
+
+
 				break;
 			default:
 
@@ -47,6 +56,21 @@ public class glosor {
 			}
 		}
 	}
+
+
+	public static void lagraIFil() {
+
+
+		//skapa printwriter objekt
+		//skapa loop som hämtar ord från lista och skriver till filen
+		//stänga ström till print pwriter objekt
+
+
+
+
+	}
+
+
 
 	public static void nyglosa() {
 

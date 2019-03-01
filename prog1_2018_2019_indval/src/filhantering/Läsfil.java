@@ -6,19 +6,18 @@ import java.util.Scanner;
 
 public class Läsfil {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 
 		Scanner filläsare = null;
 
-		try {
-			filläsare = new Scanner(new File("test2.txt"));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			// e.printStackTrace();
 
-			System.out.print(e.toString());
+			try {
+				filläsare = new Scanner(new File("test2.txt"));
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
-		}
 
 		while (filläsare.hasNextLine()) {
 
