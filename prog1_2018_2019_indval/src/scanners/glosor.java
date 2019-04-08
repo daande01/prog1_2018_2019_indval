@@ -1,5 +1,10 @@
 package scanners;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -9,17 +14,21 @@ public class glosor {
 	static LinkedList<String> eng = new LinkedList<String>();
 	static int poäng = 0;
 
-	public static void main(String[] args) {
-
-		//skapa en scanner som läser från filen
-		// skapa en loop som hämtar ord för ord och lägger i listan
+	public static void main(String[] args) throws IOException {
 
 
+		Scanner sc = new Scanner(new File("glosor.txt"));
 
-		sv.add("katt");
-		eng.add("cat");
-		sv.add("bil");
-		eng.add("car");
+
+		while(sc.hasNextLine()) {
+
+			sv.add(sc.nextLine());
+			eng.add(sc.nextLine());
+
+
+		}
+
+
 
 		Scanner s = new Scanner(System.in);
 
@@ -58,12 +67,23 @@ public class glosor {
 	}
 
 
-	public static void lagraIFil() {
+	public static void lagraIFil() throws IOException {
 
 
-		//skapa printwriter objekt
-		//skapa loop som hämtar ord från lista och skriver till filen
-		//stänga ström till print pwriter objekt
+
+		PrintWriter p = new PrintWriter(new BufferedWriter(new FileWriter("glosor.txt")));
+
+
+		for (int i = 0; i < sv.size(); i++) {
+
+			p.println(sv.get(i));
+			p.println(eng.get(i));
+
+		}
+
+		p.close();
+
+
 
 
 
