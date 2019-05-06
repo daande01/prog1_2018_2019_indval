@@ -8,16 +8,16 @@ import javax.swing.JFrame;
 
 public class Figur extends JComponent {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 
-	JFrame frame =new JFrame("figur");  // sakpar jframe == ruta
-	frame.setSize(500, 500);  			// sätter storlek
-	frame.setContentPane(new Figur());  // skapar ett objekt av denna klass och lägger in
-										//de i denna jFrame
-	frame.setVisible(true);
-}
+		JFrame frame = new JFrame("figur"); // sakpar jframe == ruta
+		frame.setSize(500, 500); // sätter storlek
+		frame.setContentPane(new Figur()); // skapar ett objekt av denna klass och lägger in
+											// de i denna jFrame
+		frame.setVisible(true);
+	}
 
-@Override
+	@Override
 	public void paint(Graphics g) {
 
 		g.setColor(Color.black);
@@ -30,10 +30,8 @@ public static void main(String[] args) {
 
 		g.fillRect(80, 80, 20, 20);
 
-		//g.fillOval(100, 200, 50, 50);
+		// g.fillOval(100, 200, 50, 50);
 		super.paint(g);
 	}
-
-
 
 }

@@ -13,13 +13,16 @@ public class Boll1 extends JComponent {
 	private Color c = Color.orange;
 	private int x = 20;
 	private int y = 20;
-	private int vy=4;
+	private int vy = 1;
+	private int vx = 1;
 
+	private JFrame fr;
 
+	public Boll1(JFrame fr) {
 
-	public Boll1() {
+		this.fr = fr;
 
-		Timer t = new Timer(40, e -> {
+		Timer t = new Timer(20, e -> {
 
 			move();
 
@@ -31,13 +34,33 @@ public class Boll1 extends JComponent {
 	}
 
 	private void move() {
-		x++;
-		y=y+vy;
+		x += vx;
+		//vy = vy + 2;// gravitation
+		y += vy;
 
-		if(y>) {
+		if (y + 2 * radie > fr.getContentPane().getHeight()) { // ner
 
-		vy=-vy;
+			vy = -vy;
 		}
+		if(y<0) {//up
+
+			vy=-vy;
+
+		}
+
+
+		if (x + 2 * radie > fr.getContentPane().getWidth()) { //höger
+
+			vx = -vx;
+		}
+		if(x<0) {//vänster
+
+			vx=-vx;
+
+		}
+
+
+
 
 	}
 
@@ -54,8 +77,8 @@ public class Boll1 extends JComponent {
 
 		JFrame frame = new JFrame("figur"); // sakpar jframe == ruta
 		frame.setSize(500, 500); // sätter storlek
-		frame.setContentPane(new Boll1()); // skapar ett objekt av denna klass och lägger in
-											// de i denna jFrame
+		frame.setContentPane(new Boll1(frame)); // skapar ett objekt av denna klass och lägger in
+		// de i denna jFrame
 		frame.setVisible(true);
 	}
 
