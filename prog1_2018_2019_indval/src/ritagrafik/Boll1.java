@@ -9,42 +9,42 @@ import javax.swing.Timer;
 
 public class Boll1 extends JComponent {
 
-	private int radie = 20;
-	private Color c = Color.orange;
-	private int x = 20;
-	private int y = 20;
-	private int vy = 1;
-	private int vx = 1;
+	private int radie = 20;  // instansvariabel alltså alla olika boll1 objekt kommer att få en alldeles egen radie behållare.
+	private Color c = Color.orange;   // instansvariabel, bollens framtida färg
+	private int x = 20;// instansvariabel , bollens x kordinat
+	private int y = 20;// instansvariabel, bollens y kordinat
+	private int vy = 1;// instansvariabel, bollens hastighet i y led
+	private int vx = 1;// instansvariabel, bollens hastighet i x led
 
-	private JFrame fr;
+	private JFrame fr;  // skapar en jframe behållare så att vi kan ha en känner till relation till vår jframe så att vi kan fåreda på exempelvis hur stor arbetsytan är (contentpane)
 
-	public Boll1(JFrame fr) {
+	public Boll1(JFrame fr) {// konstruktor som tar i mot jframe som inparameter
 
-		this.fr = fr;
+		this.fr = fr;// lagra inparametern i instansvariabel för framtida bruk , så att vi i framtiden kan kontrollera storleken på arbets ytan , kan ju haända att den blir större om användaren drar i fönstret
 
-		Timer t = new Timer(20, e -> {
+		Timer t = new Timer(20, e -> {  // timer koden inne i kroppen på denna timer kommer att exekveras var 20 milliesekund.tänk på att denna timer måste importeras från swing paketet och inte något annat paket då kommer den inte att fungera.
 
-			move();
+			move(); // kallar på metoden move som flyttar bollen och kollar så att vi inte träffar något
 
-			repaint();
+			repaint(); // ritar om allt
 
 		});
-		t.start();
+		t.start(); // startar timern har ni inte med denna så kommer de inte att hända något.
 
 	}
 
-	private void move() {
-		x += vx;
+	private void move() { // metod för att flytta bollen och kolla om kollition med vägg
+		x += vx;  // flyttar i x led
 		//vy = vy + 2;// gravitation
-		y += vy;
+		y += vy; // flyttar i y led
 
-		if (y + 2 * radie > fr.getContentPane().getHeight()) { // ner
+		if (y + 2 * radie > fr.getContentPane().getHeight()) { // kollar om vi traffar nedre kanten på fönstret i så fall vänder vi
 
-			vy = -vy;
+			vy = -vy; // byter riktning
 		}
-		if(y<0) {//up
+		if(y<0) {//kollar om vi slott i taket.
 
-			vy=-vy;
+			vy=-vy;//byter riktning
 
 		}
 
@@ -67,8 +67,8 @@ public class Boll1 extends JComponent {
 	@Override
 	public void paint(Graphics g) {
 
-		g.setColor(c);
-		g.fillOval(x, y, radie * 2, radie * 2);
+		g.setColor(c);// sätter färg
+		g.fillOval(x, y, radie * 2, radie * 2);// ritar ut bollen  (Xled, yled, dimater x , diamter y )
 
 		super.paint(g);
 	}
